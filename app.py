@@ -46,20 +46,36 @@ chat_chain = ChatPromptTemplate.from_messages([
 # Streamlit App Configuration
 st.set_page_config(page_title="Policy Analyzer", layout="wide")
 st.markdown("""
-    <style>
+   <style>
     .main {background: linear-gradient(to bottom, #1a1a1a, #2d2d2d); padding: 20px;}
     .stButton>button {
         background-color: #4CAF50; color: white; border-radius: 8px; padding: 8px 16px;
         transition: background-color 0.3s; width: 100%; font-size: 14px;
     }
     .stButton>button:hover {background-color: #45a049;}
-    .stTextInput>div>div>input {
-        border-radius: 8px; background-color: #2d2d2d; color: #e0e0e0; border: 1px solid #4CAF50;
-        padding: 10px; font-size: 15px; width: 100%;
+    
+    /* More specific selector to ensure these styles are applied */
+    .stTextInput>div>div>input, div[data-testid="stTextInput"] input, .stTextInput input {
+        border-radius: 8px !important; 
+        background-color: #2d2d2d !important; 
+        color: #e0e0e0 !important; 
+        border: 1px solid #4CAF50 !important;
+        padding: 20px !important; 
+        font-size: 18px !important; 
+        width: 100% !important; 
+        height: 70px !important;
+        min-height: 70px !important;
+        line-height: 1.5 !important;
     }
+    
+    /* Additional styling for the container */
+    [data-testid="stTextInput"] {
+        margin: 15px 0 !important;
+    }
+    
     .chat-container {
         background-color: #2d2d2d; border: 2px solid #4CAF50; border-radius: 8px;
-        padding: 15px; height: 500px; overflow-y: auto; margin-bottom: 20px;
+        padding: 15px; height: 800px; overflow-y: auto; margin-bottom: 20px;
     }
     .chat-message {
         padding: 12px 18px; border-radius: 8px; margin: 10px 0; max-width: 85%;
@@ -84,15 +100,14 @@ with st.container():
     # First Dropdown: Industry Selection
     industry = st.selectbox(
         "Select Industry",
-        ["Financial Services", "Healthcare (Coming Soon)", "Technology (Coming Soon)"],
-        help="Industry-specific policy analysis coming soon for some sectors!"
+        ["Financial Services", "Healthcare", "Technology"]
     )
 
     # Define options for the second dropdown based on industry
     second_dropdown_options = {
         "Financial Services": ["AML",  "ARPA","ASIC", "Work place health and safety","Privacy","Treasury Law","Fraud Prevention", "Credit","Regulatory Compliance"],
-        "Healthcare (Coming Soon)": ["Coming Soon"],
-        "Technology (Coming Soon)": ["Coming Soon"]
+        "Healthcare": ["AML",  "ARPA","ASIC", "Work place health and safety","Privacy","Treasury Law","Fraud Prevention", "Credit","Regulatory Compliance"],
+        "Technology": ["AML",  "ARPA","ASIC", "Work place health and safety","Privacy","Treasury Law","Fraud Prevention", "Credit","Regulatory Compliance"]
     }
 
     # Second Dropdown: Subcategory Selection
@@ -105,16 +120,12 @@ with st.container():
     else:
         subcategory = st.selectbox(
             "Select Policy Area",
-            second_dropdown_options[industry],
-            disabled=True,
-            help="Subcategories coming soon for this industry!"
+            second_dropdown_options[industry]
         )
     
     # Optional: Display selected subcategory (for debugging or UI purposes)
     if industry == "Financial Services" and subcategory:
         st.write(f"Selected Policy Area: {subcategory}")
-    elif industry != "Financial Services":
-        st.write("Subcategory selection unavailable until industry is fully implemented.")
 
 # Main content with equal columns
 AML_DATA_PATH = "./cleaned_document.docx"
