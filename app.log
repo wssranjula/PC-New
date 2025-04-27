@@ -1,0 +1,33 @@
+2025-04-27 14:55:48,120 - __main__ - INFO - Using cached analysis result
+2025-04-27 14:57:51,902 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 Gemini 2.5 Pro Preview doesn't have a free quota tier. Please use Gemini 2.5 Pro Experimental (models/gemini-2.5-pro-exp-03-25) instead. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 8
+}
+].
+2025-04-27 14:57:55,848 - __main__ - ERROR - Chat error: 429 Gemini 2.5 Pro Preview doesn't have a free quota tier. Please use Gemini 2.5 Pro Experimental (models/gemini-2.5-pro-exp-03-25) instead. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 4
+}
+]
