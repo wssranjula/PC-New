@@ -31,3 +31,123 @@ violations {
   seconds: 4
 }
 ]
+2025-04-29 09:53:19,679 - __main__ - ERROR - Application error: `st.session_state.chat_input` cannot be modified after the widget with key `chat_input` is instantiated.
+Traceback (most recent call last):
+  File "C:\Users\SureshShehan\Desktop\My\PC New\app.py", line 527, in main
+    st.session_state.chat_input = ""
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\metrics_util.py", line 410, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state_proxy.py", line 136, in __setattr__
+    self[key] = value
+    ~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\metrics_util.py", line 410, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state_proxy.py", line 114, in __setitem__
+    get_session_state()[key] = value
+    ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\safe_session_state.py", line 101, in __setitem__
+    self._state[key] = value
+    ~~~~~~~~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state.py", line 513, in __setitem__
+    raise StreamlitAPIException(
+streamlit.errors.StreamlitAPIException: `st.session_state.chat_input` cannot be modified after the widget with key `chat_input` is instantiated.
+
+2025-04-29 09:53:41,734 - __main__ - ERROR - Application error: `st.session_state.chat_input` cannot be modified after the widget with key `chat_input` is instantiated.
+Traceback (most recent call last):
+  File "C:\Users\SureshShehan\Desktop\My\PC New\app.py", line 527, in main
+    st.session_state.chat_input = ""
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\metrics_util.py", line 410, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state_proxy.py", line 136, in __setattr__
+    self[key] = value
+    ~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\metrics_util.py", line 410, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state_proxy.py", line 114, in __setitem__
+    get_session_state()[key] = value
+    ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\safe_session_state.py", line 101, in __setitem__
+    self._state[key] = value
+    ~~~~~~~~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state.py", line 513, in __setitem__
+    raise StreamlitAPIException(
+streamlit.errors.StreamlitAPIException: `st.session_state.chat_input` cannot be modified after the widget with key `chat_input` is instantiated.
+
+2025-04-29 09:53:55,113 - __main__ - ERROR - Application error: `st.session_state.chat_input` cannot be modified after the widget with key `chat_input` is instantiated.
+Traceback (most recent call last):
+  File "C:\Users\SureshShehan\Desktop\My\PC New\app.py", line 527, in main
+    st.session_state.chat_input = ""
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\metrics_util.py", line 410, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state_proxy.py", line 136, in __setattr__
+    self[key] = value
+    ~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\metrics_util.py", line 410, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state_proxy.py", line 114, in __setitem__
+    get_session_state()[key] = value
+    ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\safe_session_state.py", line 101, in __setitem__
+    self._state[key] = value
+    ~~~~~~~~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state.py", line 513, in __setitem__
+    raise StreamlitAPIException(
+streamlit.errors.StreamlitAPIException: `st.session_state.chat_input` cannot be modified after the widget with key `chat_input` is instantiated.
+
+2025-04-29 09:54:15,878 - __main__ - ERROR - Application error: `st.session_state.chat_input` cannot be modified after the widget with key `chat_input` is instantiated.
+Traceback (most recent call last):
+  File "C:\Users\SureshShehan\Desktop\My\PC New\app.py", line 527, in main
+    st.session_state.chat_input = ""
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\metrics_util.py", line 410, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state_proxy.py", line 136, in __setattr__
+    self[key] = value
+    ~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\metrics_util.py", line 410, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state_proxy.py", line 114, in __setitem__
+    get_session_state()[key] = value
+    ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\safe_session_state.py", line 101, in __setitem__
+    self._state[key] = value
+    ~~~~~~~~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state.py", line 513, in __setitem__
+    raise StreamlitAPIException(
+streamlit.errors.StreamlitAPIException: `st.session_state.chat_input` cannot be modified after the widget with key `chat_input` is instantiated.
+
+2025-04-29 09:54:20,193 - __main__ - ERROR - Application error: `st.session_state.chat_input` cannot be modified after the widget with key `chat_input` is instantiated.
+Traceback (most recent call last):
+  File "C:\Users\SureshShehan\Desktop\My\PC New\app.py", line 527, in main
+    st.session_state.chat_input = ""
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\metrics_util.py", line 410, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state_proxy.py", line 136, in __setattr__
+    self[key] = value
+    ~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\metrics_util.py", line 410, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state_proxy.py", line 114, in __setitem__
+    get_session_state()[key] = value
+    ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\safe_session_state.py", line 101, in __setitem__
+    self._state[key] = value
+    ~~~~~~~~~~~^^^^^
+  File "C:\Users\SureshShehan\Desktop\My\PC New\venv\Lib\site-packages\streamlit\runtime\state\session_state.py", line 513, in __setitem__
+    raise StreamlitAPIException(
+streamlit.errors.StreamlitAPIException: `st.session_state.chat_input` cannot be modified after the widget with key `chat_input` is instantiated.
+

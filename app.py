@@ -467,9 +467,41 @@ def main():
             
             st.markdown(f'<div class="chat-container">{chat_html}</div>', unsafe_allow_html=True)
             
-            # Chat input section - wider text input
+            # Chat input section with clearing functionality
             with st.container():
-                # Use full width for text input
+                # Initialize session states for input management
+                if 'clear_input' not in st.session_state:
+                    st.session_state['clear_input'] = False
+                
+                # Process message from previous submission if exists
+                if st.session_state.get('clear_input', False):
+                    # Get the stored message
+                    user_message = st.session_state.get('temp_input', '')
+                    # Reset the clear flag
+                    st.session_state['clear_input'] = False
+                    # Clear the input field
+                    st.session_state.chat_input = ""
+                    
+                    if user_message:
+                        # Add user message to chat history
+                        st.session_state['chat_history'].append({"role": "user", "content": user_message})
+                        
+                        with st.spinner("Thinking..."):
+                            # Get report content if available
+                            report_content = st.session_state.get('report', "No report generated yet.")
+                            
+                            # Run chat chain
+                            response = run_chat_chain(company_policy, report_content, user_message)
+                            
+                            # Add assistant response
+                            st.session_state['chat_history'].append({"role": "assistant", "content": response})
+                        
+                        # Clear the temp message
+                        st.session_state.pop('temp_input', None)
+                        st.toast("Message sent!", icon="✉️")
+                        st.rerun()
+                
+                # User input field
                 user_input = st.text_area(
                     "Ask a question:", 
                     placeholder="e.g., 'What does the policy say about data security?'",
@@ -477,31 +509,34 @@ def main():
                     height=120
                 )
                 
-                # Keep buttons in columns
+                # Buttons for send and clear
                 col_send, col_clear = st.columns(2)
                 with col_send:
                     if st.button("Send 📩", key="send_chat", disabled=not user_input):
                         if user_input:
-                            # Add user message
-                            st.session_state['chat_history'].append({"role": "user", "content": user_input})
-                            
-                            with st.spinner("Thinking..."):
-                                # Get report content if available
-                                report_content = st.session_state.get('report', "No report generated yet.")
-                                
-                                # Run chat chain
-                                response = run_chat_chain(company_policy, report_content, user_input)
-                                
-                                # Add assistant response
-                                st.session_state['chat_history'].append({"role": "assistant", "content": response})
-                            
-                            st.toast("Message sent!", icon="✉️")
+                            # Store the current input before it gets cleared
+                            st.session_state['temp_input'] = user_input
+                            # Set flag to clear input on next rerun
+                            st.session_state['clear_input'] = True
                             st.rerun()
                 
                 with col_clear:
-                    if st.button("Clear 🗑️", key="clear_chat"):
+                    # Initialize clear flag if not present
+                    if 'clear_chat_clicked' not in st.session_state:
+                        st.session_state['clear_chat_clicked'] = False
+                        
+                    # Check if we need to clear the chat (from previous click)
+                    if st.session_state.get('clear_chat_clicked', False):
+                        # Reset the flag
+                        st.session_state['clear_chat_clicked'] = False
+                        # Reset the chat history
                         st.session_state['chat_history'] = [{"role": "assistant", "content": "Hello! You can ask me anything about the company policy, or upload a document to analyze it against the policy."}]
                         st.toast("Chat cleared!", icon="🧹")
+                        st.rerun()
+                    
+                    # Button that just sets the flag
+                    if st.button("Clear 🗑️", key="clear_chat"):
+                        st.session_state['clear_chat_clicked'] = True
                         st.rerun()
             
             st.markdown('</div>', unsafe_allow_html=True)
