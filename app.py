@@ -281,10 +281,10 @@ def main():
         "ARPA": "./ARPA1.docx",
         "Credit": "./credit.docx",
         "Work place health and safety": "./wplhs.docx",
-        "Treasury Law": "./tlcleaned.docx",
-        "Privacy": "./privacycleaned.docx",
-        "Fraud Prevention": "./fraud_prevention.docx",
-        "Regulatory Compliance": "./regulatory_compliance.docx"
+        "Treasury Law": "./tlcleaned.docx"
+        # "Privacy": "./privacycleaned.docx",
+        # "Fraud Prevention": "./fraud_prevention.docx",
+        # "Regulatory Compliance": "./regulatory_compliance.docx"
     }
 
     # Modified app flow with checkbox for mode selection
@@ -298,11 +298,11 @@ def main():
         # Define options for the second dropdown based on industry
         second_dropdown_options = {
             "Financial Services": ["AML", "ARPA", "ASIC", "Work place health and safety", "Privacy", 
-                                  "Treasury Law", "Fraud Prevention", "Credit", "Regulatory Compliance"],
+                                   "Treasury Law"],
             "Healthcare": ["AML", "ARPA", "ASIC", "Work place health and safety", "Privacy", 
-                          "Treasury Law", "Fraud Prevention", "Credit", "Regulatory Compliance"],
+                           "Treasury Law"],
             "Technology": ["AML", "ARPA", "ASIC", "Work place health and safety", "Privacy", 
-                          "Treasury Law", "Fraud Prevention", "Credit", "Regulatory Compliance"]
+                           "Treasury Law"]
         }
 
         # Second Dropdown: Subcategory Selection
