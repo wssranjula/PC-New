@@ -51,7 +51,7 @@ def init_llm():
     try:
         api_key = get_api_key()
         return ChatGoogleGenerativeAI(
-            model="gemini-2.5-pro-exp-03-25",
+            model="gemini-2.5-pro-preview-03-25",
             temperature=0,
             max_tokens=None,
             timeout=30,  # Set explicit timeout
